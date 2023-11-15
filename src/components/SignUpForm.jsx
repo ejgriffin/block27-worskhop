@@ -13,9 +13,12 @@ export default function SignUpForm({ setToken }) {
         "https://fsa-jwt-practice.herokuapp.com/signup",
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify({
-            username: { username },
-            password: { password },
+            username: username,
+            password: password,
           }),
         }
       );
@@ -37,6 +40,7 @@ export default function SignUpForm({ setToken }) {
         <label>
           Username:{" "}
           <input
+            minLength="8"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -44,6 +48,7 @@ export default function SignUpForm({ setToken }) {
         <label>
           Password:{" "}
           <input
+            minLength="8"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
