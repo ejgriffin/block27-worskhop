@@ -56,11 +56,7 @@ export default function SignUpForm({ setToken }) {
         </label>
         <button>Submit</button>
       </form>
-      {submitMessage && (
-        <p>
-          {submitMessage} Welcome, {username}!
-        </p>
-      )}
+      {submitMessage && <p>{submitMessage}</p>}
     </div>
   );
 }
